@@ -6,6 +6,8 @@ import 'package:flutter_paytabs_bridge/BaseBillingShippingInfo.dart';
 import 'package:flutter_paytabs_bridge/IOSThemeConfiguration.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkApms.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkConfigurationDetails.dart';
+import 'package:flutter_paytabs_bridge/PaymentSdkTransactionClass.dart';
+import 'package:flutter_paytabs_bridge/PaymentSdkTransactionType.dart';
 import 'package:flutter_paytabs_bridge/flutter_paytabs_bridge.dart';
 
 void main() {
@@ -33,9 +35,9 @@ class _MyAppState extends State<MyApp> {
     List<PaymentSdkAPms> apms = [];
     apms.add(PaymentSdkAPms.STC_PAY);
     var configuration = PaymentSdkConfigurationDetails(
-        profileId: "*profile id*",
-        serverKey: "*server key*",
-        clientKey: "*client key*",
+        profileId: "87974",
+        serverKey: "SLJNBZM92T-JDGMLRKHZZ-92D2RLGDKM",
+        clientKey: "CTKMP6-DNKR6D-TNBRKH-MVKNPD",
         cartId: "12433",
         cartDescription: "Flowers",
         merchantName: "Flowers Store",
@@ -43,6 +45,8 @@ class _MyAppState extends State<MyApp> {
         amount: 20.0,
         showBillingInfo: true,
         forceShippingInfo: false,
+        transactionClass: PaymentSdkTransactionClass.ECOM,
+        transactionType: PaymentSdkTransactionType.SALE,
         currencyCode: "SAR",
         merchantCountryCode: "SA",
         billingDetails: billingDetails,
@@ -94,9 +98,9 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> applePayPressed() async {
     var configuration = PaymentSdkConfigurationDetails(
-        profileId: "*Profile id*",
-        serverKey: "*server key*",
-        clientKey: "*client key*",
+        profileId: "87974",
+        serverKey: "SLJNBZM92T-JDGMLRKHZZ-92D2RLGDKM",
+        clientKey: "CTKMP6-DNKR6D-TNBRKH-MVKNPD",
         cartId: "12433",
         cartDescription: "Flowers",
         merchantName: "Flowers Store",
